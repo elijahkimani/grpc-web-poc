@@ -1,0 +1,7 @@
+# This file specifies all the folders/directories
+# that contain Protocol Buffer definitions
+
+version: v1
+
+directories:
+  - proto

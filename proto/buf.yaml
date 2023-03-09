@@ -1,0 +1,10 @@
+# specify the required dependency for compiling proto files
+# placed in the root location of all proto files
+
+#NOTE: run 'buf mod update' command to generate buf.lock in the folder that contains this file
+
+version: v1
+
+deps:
+  # adding well known types by google
+  - buf.build/googleapis/googleapis

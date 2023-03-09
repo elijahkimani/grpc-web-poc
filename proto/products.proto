@@ -1,0 +1,73 @@
+syntax = "proto3";
+
+option go_package = "example/elijah/grpc-web-poc;products";
+
+package products;
+
+import "google/api/annotations.proto";
+
+message Product {
+    int32 id = 1;
+    string title = 2;
+    string description = 3;
+    int32 price = 4;
+    float discountPercentage = 5;
+    float rating = 6;
+    int32 stock = 7;
+    string brand = 8;
+    string category = 9;
+    string thumbnail = 10;
+    repeated string images = 11;
+}
+
+message Category {
+    string name = 1;
+    string thumbnail = 2;
+    string image = 3;
+}
+
+message ProductList {
+    repeated Product products = 1;
+}
+
+message CategoryList {
+    repeated Category categories = 1;
+}
+
+message ProductRequest {
+    int32 id = 1;
+}
+
+message CategoryRequest {
+    string name = 1;
+}
+
+message Empty {}
+
+service ProductsService {
+    rpc GetProduct(ProductRequest) returns (Product) {
+        option (google.api.http) = {
+            // note how the route param 'id' matches the key in the 'ProductRequest' gRPC payload
+            get: "/v1/products/{id}"
+        };
+    }
+
+    rpc GetAllProducts(Empty) returns (ProductList) {
+        option (google.api.http) = {
+            get: "/v1/products"
+        };
+    }
+
+    rpc GetProductsInCategory(CategoryRequest) returns (ProductList) {
+        option (google.api.http) = {
+            get: "/v1/categories/{name}/products"
+        };
+    }
+    
+    rpc GetAllCategories(Empty) returns (CategoryList) {
+        option (google.api.http) = {
+            get: "/v1/categories"
+        };
+    }
+
+}
