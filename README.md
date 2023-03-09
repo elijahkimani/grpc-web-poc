@@ -25,5 +25,8 @@ The ere are two possible approaches to this
 ## Instructions
 
 1. To start the gRPC server, execute the command `npm run start:grpc-server`
-2. To start the ggo proxy server, execute the command `go run proxy/main.go`
+   - This will expose the server in the endpoint [http:\\\\localhost:30043](http:\\localhost:30043)
+2. To start the go proxy server, execute the command `go run proxy/main.go`
+   - This exposes the proxy server for RESTful calls in [http:\\\\localhost:8081](http:\\localhost:8081)
+   - Try accessing the endpoint [http:\\\\localhost:8081\\v1\\products](http:\\localhost:8081\v1\products) in your browser or postman. A list of products should be displayed
 3. To start the gRPC Node client, execute the command `npm run start:grpc-client`
