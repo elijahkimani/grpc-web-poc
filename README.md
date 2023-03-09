@@ -20,6 +20,7 @@ The ere are two possible approaches to this
 1. Install `protoc`
 2. Install `buf` - Helps generate APIs from protocol buffers
 3. Install `GoLang` - Runs the MUX proxy server
+4. Install `node js`
 
 ## Instructions
 
