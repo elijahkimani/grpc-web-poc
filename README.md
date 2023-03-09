@@ -20,13 +20,13 @@ The ere are two possible approaches to this
 1. Install `protoc`
 2. Install `buf` - Helps generate APIs from protocol buffers
 3. Install `GoLang` - Runs the MUX proxy server
-4. Install `Node js`
 
 ## Instructions
 
-1. To start the gRPC server, execute the command `npm run start:grpc-server`
-   - This will expose the server in the endpoint [http:\\\\localhost:30043](http:\\localhost:30043)
-2. To start the go proxy server, execute the command `go run proxy/main.go`
-   - This exposes the proxy server for RESTful calls in [http:\\\\localhost:8081](http:\\localhost:8081)
-   - Try accessing the endpoint [http:\\\\localhost:8081\\v1\\products](http:\\localhost:8081\v1\products) in your browser or postman. A list of products should be displayed
-3. To start the gRPC Node client, execute the command `npm run start:grpc-client`
+1. Install the NPM packages. Run `npm install`
+2. To start the gRPC server, execute the command `npm run start:grpc-server`
+   - This will expose the server in the endpoint [http:\\\\localhost:30043](http:\localhost:30043)
+3. To start the go proxy server, execute the command `go run proxy/main.go`
+   - This exposes the proxy server for RESTful calls in [http:\\\\localhost:8081](http:\localhost:8081)
+   - Try accessing the endpoint [http:\\\\localhost:8081\\v1\\products](http:\localhost:8081\v1\products) in your browser or postman. A list of products should be displayed
+4. To start the gRPC Node client, execute the command `npm run start:grpc-client`
